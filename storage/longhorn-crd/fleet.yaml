@@ -7,3 +7,8 @@ helm:
   
   # Important: Wait for CRDs to be fully established before marking success
   waitForJob: true
+
+targets:
+- clusterSelector:
+    matchLabels:
+      needs-security: "true"
