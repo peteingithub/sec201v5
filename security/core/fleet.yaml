@@ -14,6 +14,7 @@ dependsOn:
       matchLabels:
         provides: neuvector-crd
   - name: suse-security-security-crd 
+  - name: suse-security-storage-longhorn-app
 #  - selector:
 #      matchLabels:
 #        provides: longhorn
