@@ -10,8 +10,8 @@ targets:
       matchLabels:
         needs-security: "true"
 dependsOn:
-  - name: suse-security-security-crd 
-  - name: suse-security-storage-longhorn-app
+  - name: security-with-storage-security-crd        
+  - name: security-with-storage-storage-longhorn-app
 labels:
   provides: neuvector
 diff:

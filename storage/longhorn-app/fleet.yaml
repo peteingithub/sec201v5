@@ -6,7 +6,7 @@ targets:
         needs-security: "true"
 
 dependsOn:
-  - name: suse-security-storage-longhorn-crd 
+  - name: security-with-storage-storage-longhorn-crd 
 
 helm:
   repo: https://charts.rancher.io
