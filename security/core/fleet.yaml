@@ -16,13 +16,10 @@ labels:
   provides: neuvector
 diff:
   comparePatches:
-  - apiVersion: coordination.k8s.io/v1
-    kind: Lease
-    operations:
-    - {"op": "remove", "path": "/spec/leaseTransitions"}
   - apiVersion: v1
     kind: Secret
     name: neuvector-internal-certs
+    namespace: cattle-neuvector-system
     operations:
-    - {"op": "remove", "path": "/"} # This stops the "WaitApplied" hang
+    - {"op": "remove", "path": "/data"}
 
