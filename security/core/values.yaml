@@ -1,6 +1,6 @@
 registry: registry.rancher.com
 
-# Links the app into the Rancher UI catalog
+# Integrates the app into the Rancher Dashboard sidebar
 labels:
   catalog.cattle.io/cluster-repo-name: rancher-charts
 
@@ -8,12 +8,11 @@ rancher:
   enabled: true
 
 manager:
+  # Disabling ingress to avoid port 80 conflicts with ServiceLB
   ingress:
-    enabled: true
-    tls: false
-    host: cplane-1.example.com
+    enabled: false 
   svc:
-    type: ClusterIP  # Traefik (K3s default) will route to this via the Ingress above
+    type: LoadBalancer
 
 k3s:
   enabled: true
@@ -29,7 +28,8 @@ controller:
   sso:
     enabled: true
   
-  # This section activates the Rancher RBAC handshake
+  # This section fixes the "RBAC Disabled" error by forcing NeuVector 
+  # to trust the Rancher platform for authentication.
   configmap:
     enabled: true
     data:
@@ -44,4 +44,5 @@ cve:
   scanner:
     enabled: true
     replicas: 1
+
 
