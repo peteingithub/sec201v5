@@ -24,6 +24,13 @@ k3s:
 
 controller:
   replicas: 1
+  resources:
+    limits:
+      cpu: null
+      memory: null
+    requests:
+      cpu: 100m
+      memory: 256Mi
   prime:
     enabled: true
   pvc:
