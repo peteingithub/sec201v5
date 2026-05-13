@@ -24,13 +24,13 @@ k3s:
 
 controller:
   replicas: 1
-  resources:
-    limits:
-      cpu: 2000m
-      memory: 2Gi
-    requests:
-      cpu: 100m
-      memory: 256Mi 
+##  resources:
+##    limits:
+##      cpu: 2000m
+##      memory: 2Gi
+##    requests:
+##      cpu: 100m
+##      memory: 256Mi 
   prime:
     enabled: true
   pvc:
@@ -38,6 +38,10 @@ controller:
     storageClassName: longhorn
   sso:
     enabled: true
+  secret:
+    enabled: true
+    data:
+      admin_password: P4ssword
   
   # This section fixes the "RBAC Disabled" error by forcing NeuVector 
   # to trust the Rancher platform for authentication.
@@ -47,7 +51,7 @@ controller:
       sysinitcfg.yaml: |
         New_Service_Profile_Baseline: basic
         Auth_By_Platform: true
-        Cluster_Name: k3s-security
+        Cluster_Name: Production
         Scan_Config:
           Auto_Scan: true
 
