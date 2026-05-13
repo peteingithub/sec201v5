@@ -1,3 +1,7 @@
+global:
+  cattle:
+    url: https://rancher.example.com
+
 registry: registry.rancher.com
 
 # Integrates the app into the Rancher Dashboard sidebar
