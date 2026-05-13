@@ -1,5 +1,10 @@
 defaultNamespace: longhorn-system
 
+targets:
+  - clusterSelector:
+      matchLabels:
+        needs-security: "true"
+
 # This ensures Fleet installs the 'longhorn-crd' bundle first
 dependsOn:
   - name: suse-security-storage-longhorn-crd 
@@ -42,7 +47,3 @@ diff:
     operations:
     - {"op": "replace", "path": "/status"}
 
-targets:
-  - clusterSelector:
-      matchLabels:
-        needs-security: "true"
