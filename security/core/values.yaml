@@ -26,11 +26,11 @@ controller:
   replicas: 1
   resources:
     limits:
-      cpu: null
-      memory: null
+      cpu: 2000m
+      memory: 2Gi
     requests:
       cpu: 100m
-      memory: 256Mi
+      memory: 256Mi 
   prime:
     enabled: true
   pvc:
