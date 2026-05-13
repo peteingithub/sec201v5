@@ -3,6 +3,7 @@ helm:
   chart: neuvector
   repo: https://charts.rancher.io
   version: "109.0.1+up2.8.13"
+  force: true
   valuesFiles:
     - values.yaml
 targets:
