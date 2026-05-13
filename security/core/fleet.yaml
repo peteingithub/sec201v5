@@ -24,4 +24,5 @@ diff:
     kind: Secret
     name: neuvector-internal-certs
     operations:
-    - {"op": "remove", "path": "/"}
+    - {"op": "remove", "path": "/"} # This stops the "WaitApplied" hang
+
