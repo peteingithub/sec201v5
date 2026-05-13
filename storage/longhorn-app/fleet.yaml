@@ -42,7 +42,7 @@ diff:
     operations:
     - {"op": "replace", "path": "/status"}
 
-overrideTargets:
+targets:
   - clusterSelector:
       matchLabels:
         needs-security: "true"
