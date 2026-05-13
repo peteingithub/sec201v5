@@ -20,10 +20,15 @@ diff:
   - apiVersion: v1
     kind: Secret
     name: neuvector-internal-certs
-    namespace: cattle-neuvector-system
     operations:
     - {"op": "remove", "path": "/data"}
   - apiVersion: coordination.k8s.io/v1
     kind: Lease
     operations:
     - {"op": "remove", "path": "/spec/leaseTransitions"}
+  - apiVersion: batch/v1
+    kind: CronJob
+    name: neuvector-cert-upgrader-pod
+    operations:
+    - {"op": "remove", "path": "/metadata/annotations/cert-upgrader-uid"}
+
