@@ -51,6 +51,7 @@ controller:
       sysinitcfg.yaml: |
         New_Service_Profile_Baseline: basic
         Auth_By_Platform: true
+        Always_Use_Local_Admin: true
         Cluster_Name: Production
         Scan_Config:
           Auto_Scan: true
