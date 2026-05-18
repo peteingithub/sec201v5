@@ -43,6 +43,10 @@ controller:
     storageClassName: longhorn
   sso:
     enabled: true
+  hostAliases:
+    - ip: "172.30.2.11" 
+      hostnames:
+        - "rancher.example.com"
 #  secret:
 #    enabled: true
 #    data:
