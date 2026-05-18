@@ -4,8 +4,10 @@ global:
 
 registry: registry.rancher.com
 
-internal:
-  password: "P4ssword"
+bootstrapPassword: "P4ssword"
+
+labels:
+  catalog.cattle.io/cluster-repo-name: rancher-charts
 
 # Integrates the app into the Rancher Dashboard sidebar
 labels:
