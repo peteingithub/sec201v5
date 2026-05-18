@@ -9,10 +9,6 @@ bootstrapPassword: "P4ssword"
 labels:
   catalog.cattle.io/cluster-repo-name: rancher-charts
 
-# Integrates the app into the Rancher Dashboard sidebar
-labels:
-  catalog.cattle.io/cluster-repo-name: rancher-charts
-
 rancher:
   enabled: true
 
@@ -49,6 +45,8 @@ controller:
         - "rancher.example.com"
   env:
     - name: CTRL_SYSTEM_DEBUG_SKIP_CERT_VALIDATION
+      value: "true"
+    - name: CTRL_SYSTEM_DEBUG_SHOW_OIDC
       value: "true"
 #  secret:
 #    enabled: true
