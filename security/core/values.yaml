@@ -47,6 +47,9 @@ controller:
     - ip: "172.30.2.11" 
       hostnames:
         - "rancher.example.com"
+  env:
+    - name: CTRL_SYSTEM_DEBUG_SKIP_CERT_VALIDATION
+      value: "true"
 #  secret:
 #    enabled: true
 #    data:
