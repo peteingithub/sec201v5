@@ -4,6 +4,9 @@ global:
 
 registry: registry.rancher.com
 
+internal:
+  password: "P4ssword"
+
 # Integrates the app into the Rancher Dashboard sidebar
 labels:
   catalog.cattle.io/cluster-repo-name: rancher-charts
@@ -38,10 +41,10 @@ controller:
     storageClassName: longhorn
   sso:
     enabled: true
-  secret:
-    enabled: true
-    data:
-      admin_password: P4ssword
+#  secret:
+#    enabled: true
+#    data:
+#      admin_password: P4ssword
   
   # This section fixes the "RBAC Disabled" error by forcing NeuVector 
   # to trust the Rancher platform for authentication.
