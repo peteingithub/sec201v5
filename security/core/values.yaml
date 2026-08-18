@@ -78,8 +78,6 @@ enforcer:
 
 cve:
   scanner:
-    image:
-    tag: 5.6.1
     enabled: true
     replicas: 1
 
