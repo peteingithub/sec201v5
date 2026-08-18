@@ -4,6 +4,8 @@ global:
 
 registry: registry.rancher.com
 
+tag: 5.6.1
+
 bootstrapPassword: "P4ssword"
 
 labels:
@@ -13,6 +15,8 @@ rancher:
   enabled: true
 
 manager:
+  image:
+    tag: 5.6.1
   # Disabling ingress to avoid port 80 conflicts with ServiceLB
   ingress:
     enabled: false 
@@ -24,6 +28,8 @@ k3s:
   runtimePath: /run/k3s/containerd/containerd.sock
 
 controller:
+  image:
+    tag: 5.6.1
   replicas: 1
 ##  resources:
 ##    limits:
@@ -66,8 +72,14 @@ controller:
         Scan_Config:
           Auto_Scan: true
 
+enforcer:
+  image:
+    tag: 5.6.1
+
 cve:
   scanner:
+    image:
+    tag: 5.6.1
     enabled: true
     replicas: 1
 
